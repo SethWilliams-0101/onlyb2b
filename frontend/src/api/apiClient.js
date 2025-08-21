@@ -6,7 +6,8 @@ import axios from "axios";
  * For local dev, this falls back to http://localhost:5000/api
  */
 const raw = (import.meta.env.VITE_API_URL || "http://localhost:5000").replace(/\/+$/, "");
-const api = axios.create({ baseURL: `${raw}/api` });
+const base = /\/api$/.test(raw) ? raw : `${raw}/api`; // if it already ends with /api, don’t add it
+const api = axios.create({ baseURL: base });
 
 // Attach JWT + audit header
 api.interceptors.request.use((config) => {

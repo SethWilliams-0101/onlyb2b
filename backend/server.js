@@ -62,7 +62,9 @@ app.use("/api/upload-reports", uploadReportRoutes);
 app.use("/api/duplicates", duplicateRoutes);
 app.use("/api/admin", adminRoutes); // stats for Admin Dashboard (JWT + audit code)
 
-app.get("/health", (_req, res) => res.json({ ok: true }));
+app.get("/", (_req, res) => {
+  res.send("OnlyB2B API is running. Try GET /health");
+});
 
 /** ---------- Socket.IO ---------- */
 const server = http.createServer(app);
