@@ -10,22 +10,20 @@ export default function Login() {
   const [err, setErr] = useState("");
   const navigate = useNavigate();
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    setErr("");
-    try {
-      const payload = {
-        username: (username || "").trim().toLowerCase(),
-        password
-      };
-      const { data } = await api.post("/auth/login", payload);
-      sessionStorage.setItem("token", data.token);
-      sessionStorage.setItem("user", JSON.stringify(data.user));
-      navigate("/");
-    } catch (e) {
-      setErr(e?.response?.data?.message || "Login failed");
-    }
-  };
+ const onSubmit = async (e) => {
+  e.preventDefault();
+  setErr("");
+  try {
+    const payload = { username: (username || "").trim().toLowerCase(), password };
+    const { data } = await api.post("/auth/login", payload);
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("user", JSON.stringify(data.user));
+    navigate("/");
+  } catch (e) {
+    setErr(e?.response?.data?.message || "Login failed");
+  }
+};
+
 
   return (
     <div className="login-container">
