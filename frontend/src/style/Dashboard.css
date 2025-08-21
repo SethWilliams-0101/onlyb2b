@@ -59,6 +59,38 @@
 .btn span { color: #000; }
 .btn-ghost { background:#fff; }
 .badge { margin-left:6px; padding:2px 6px; border-radius:999px; font-size:11px; color: var(--brand); background: var(--brand-50); font-weight:600; }
+/* Force Lucide icons to be dark for visibility */
+.db-search-icon,
+.db-actions svg,
+.chip-x svg,
+.table-footer .btn svg,
+.db-table thead th svg {
+  color: #0f172a; /* slate-900 dark gray */
+}
+
+/* Dark style for logout button */
+.btn-out {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  color: #0f172a; /* text + icon inherit dark color */
+  box-shadow: var(--shadow);
+}
+
+.btn-out svg {
+  color: #0f172a; /* dark icon */
+}
+
+.btn-out:hover {
+  background: #e2e8f0; /* subtle gray hover background */
+}
+
 
 .db-dropdown { position:relative; }
 .menu { position:absolute; right:0; top:calc(100% + 6px); width:min(280px, 90vw); max-height:60vh; overflow:auto; background:#fff; border:1px solid var(--line); border-radius:12px; box-shadow: var(--shadow); padding:8px; }
@@ -129,6 +161,10 @@
 .drawer-body { padding:14px; overflow:auto; height: calc(100% - 50px); }
 .icon-btn { border:0; background:transparent; cursor:pointer; border-radius:8px; padding:6px; }
 .icon-btn:hover { background:#f1f5f9; }
+.icon-btn svg {
+  background-color: #e0e5f0;
+  color: #0f172a;   /* dark slate icon */
+}
 
 /* Skeleton */
 .skl { width:96px; height:14px; background:#e2e8f0; border-radius:6px; animation: pulse 1.2s infinite ease-in-out; }
