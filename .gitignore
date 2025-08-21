@@ -1,0 +1,32 @@
+@'
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-store/
+
+# Env & secrets
+.env
+*.env
+backend/.env
+frontend/.env
+
+# Builds & cache
+dist/
+build/
+.vite/
+.cache/
+coverage/
+
+# Uploads/temp
+backend/uploads/
+*.csv
+*.xlsx
+
+# OS/Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+'@ | Out-File -Encoding utf8 .gitignore

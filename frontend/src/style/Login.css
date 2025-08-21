@@ -1,0 +1,98 @@
+/* === Login Page Container === */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a74da, #33b5e5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* === Card === */
+.login-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* === Logo === */
+.login-logo {
+  width: 280px;
+  margin-bottom: 16px;
+}
+
+/* === Title === */
+.login-title {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* === Form === */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* === Input Fields === */
+.login-input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-input:focus {
+  border-color: #0a74da;
+  box-shadow: 0 0 0 3px rgba(10, 116, 218, 0.2);
+}
+
+/* === Error Message === */
+.login-error {
+  color: crimson;
+  font-size: 12px;
+  text-align: left;
+}
+
+/* === Button === */
+.login-button {
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #0a74da;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.login-button:hover {
+  background: #095bb5;
+}
+
+.login-button:active {
+  transform: scale(0.98);
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
