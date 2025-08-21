@@ -20,16 +20,17 @@ export default function Home() {
 
   // Redirect to login if there's no session
   useEffect(() => {
-    const token = sessionStorage.getItem("token");
+    const token = localStorage.getItem("token");
     if (!token) navigate("/login", { replace: true });
   }, [navigate]);
 
   // Load user object
   useEffect(() => {
-    const raw = sessionStorage.getItem("user");
+    const raw = localStorage.getItem("user");
     if (!raw) return;
     try { setUser(JSON.parse(raw)); } catch {}
   }, []);
+
 
   const displayName = useMemo(() => {
     if (!user) return "";
@@ -43,8 +44,10 @@ export default function Home() {
   const id = user?._id || user?.id || "—";
 
   const onLogout = () => {
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("user");
+    // clear both, just in case
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    sessionStorage.removeItem("AUDIT_CODE");
     navigate("/login", { replace: true });
   };
 
