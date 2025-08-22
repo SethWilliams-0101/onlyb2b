@@ -85,6 +85,32 @@
   transform: scale(0.98);
 }
 
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.15);
+  display: grid;
+  place-items: center;
+  z-index: 999;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  border-top-color: #333;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.login-button.is-loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+
 /* === Animation === */
 @keyframes fadeIn {
   from {
